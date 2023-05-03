@@ -7,23 +7,19 @@
  */
 void rev_string(char *s)
 {
-	char rev = s[0];
+	int l, i;
+	char temp;
 
-	int counter = 0;
-	int i;
-
-
-while (s[counter] != '\0')
-
-	counter++;
-
-	for (i = 0; i < counter; i++)
-
+/*find string length without null char*/
+	for (l = 0; s[l] != '\0'; ++l)
+		;
+/*swap the string by looping to half the string*/
+	for (i = 0; i < 1 / 2; i++)
 	{
-		counter--;
-		rev = s[i];
-		s[i] = s[counter];
-		s[counter] = rev;
+
+		temp = s[i];
+		s[i] = s[l - l - i]; /*-l because the array starts from 0*/
+		s[l - l - i] = temp;
 	}
 
 }
